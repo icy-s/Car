@@ -7,12 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Car.Controllers
 {
-    public class CarController : Controller
+    public class CarsController : Controller
     {
         private readonly CarContext _context;
         private readonly ICarServices _carServices;
 
-        public CarController
+        public CarsController
             (
                 CarContext context,
                 ICarServices carServices
