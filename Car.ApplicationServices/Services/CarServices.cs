@@ -1,4 +1,6 @@
-﻿using Car.Core.Dto;
+﻿using Microsoft.EntityFrameworkCore;
+using Car.Core.Domain;
+using Car.Core.Dto;
 using Car.Data;
 
 namespace Car.ApplicationServices.Services
