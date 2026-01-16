@@ -1,13 +1,13 @@
-﻿using Car.Core.Domain;
-using Car.Core.Dto;
+﻿using Car.Core.Dto;
+using DomainCar = global::Car.Core.Domain.Car;
 
 namespace Car.Core.ServiceInterface
 {
     public interface ICarServices
     {
-        Task<Car> Create(CarDto dto);
-        Task<Car> DetailAsync(Guid id);
-        Task<Car> Delete(Guid id);
-        Task<Car> Update(CarDto dto);
+        Task<DomainCar> Create(CarDto dto);
+        Task<DomainCar> DetailAsync(Guid id);
+        Task<DomainCar> Delete(Guid id);
+        Task<DomainCar> Update(CarDto dto);
     }
 }

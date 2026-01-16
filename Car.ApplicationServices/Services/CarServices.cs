@@ -3,6 +3,7 @@ using Car.Core.Domain;
 using Car.Core.Dto;
 using Car.Data;
 using Car.Core.ServiceInterface;
+using DomainCar = global::Car.Core.Domain.Car;
 
 namespace Car.ApplicationServices.Services
 {
@@ -16,9 +17,9 @@ namespace Car.ApplicationServices.Services
         {
             _context = context;
         }
-        public async Task<Car> Create(CarDto dto)
+        public async Task<DomainCar> Create(CarDto dto)
         {
-            Car car = new Car();
+            DomainCar car = new DomainCar();
 
             car.Id = Guid.NewGuid();
             car.Make = dto.Make;
@@ -34,7 +35,7 @@ namespace Car.ApplicationServices.Services
             return car;
         }
 
-        public async Task<Car> DetailAsync(Guid id)
+        public async Task<DomainCar> DetailAsync(Guid id)
         {
             var result = await _context.Cars
                 .FirstOrDefaultAsync( x  => x.Id == id );
@@ -42,7 +43,7 @@ namespace Car.ApplicationServices.Services
             return result;
         }
 
-        public async Task <Car> Delete (Guid id)
+        public async Task <DomainCar> Delete (Guid id)
         {
             var car = await _context.Cars
                 .FirstOrDefaultAsync(x  => x.Id == id);
@@ -53,9 +54,9 @@ namespace Car.ApplicationServices.Services
             return car;
         }
 
-        public async Task<Car> Update (CarDto dto)
+        public async Task<DomainCar> Update (CarDto dto)
         {
-            Car domain = new();
+            DomainCar domain = new();
 
             domain.Id = dto.Id;
             domain.Make = dto.Make;

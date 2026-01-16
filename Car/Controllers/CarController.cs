@@ -1,4 +1,8 @@
-﻿using Car.Data;
+﻿using Car.ApplicationServices.Services;
+using Car.Core.Dto;
+using Car.Core.ServiceInterface;
+using Car.Data;
+using Car.Models.Cars;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Car.Controllers
@@ -15,7 +19,7 @@ namespace Car.Controllers
             )
         {
             _context = context;
-            _carServices = _context.CarServices;
+            _carServices = carServices;
         }
 
         public IActionResult Index()
